@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @invoice.id %>
+</p>
+
+<p>
+  <strong>Terminal:</strong>
+  <%= @invoice.terminal_id %>
+</p>
+
+<p>
+  <strong>Transaction:</strong>
+  <%= @invoice.transaction_id %>
+</p>
+
+<p>
+  <strong>Origin invoice:</strong>
+  <%= @invoice.origin_invoice_id %>
+</p>
+
+<p>
+  <strong>Site code:</strong>
+  <%= @invoice.site_code %>
+</p>
+
+<p>
+  <strong>Transaction code:</strong>
+  <%= @invoice.transaction_code %>
+</p>
+
+<p>
+  <strong>Type code:</strong>
+  <%= @invoice.type_code %>
+</p>
+
+<p>
+  <strong>Document no:</strong>
+  <%= @invoice.document_no %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @invoice.status %>
+</p>
+
+<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
+<%= link_to 'Back', invoices_path %>
