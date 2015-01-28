@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  invoice_id: 1
+  line_no: 1
+  payment_type_code: MyText
+  amount: 9.99
+  invoice_id: 
+
+two:
+  invoice_id: 1
+  line_no: 1
+  payment_type_code: MyText
+  amount: 9.99
+  invoice_id: 
