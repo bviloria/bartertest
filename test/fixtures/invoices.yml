@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  terminal_id: 1
+  transaction_id: 1
+  origin_invoice_id: 1
+  site_code: MyText
+  transaction_code: MyText
+  type_code: MyText
+  document_no: MyText
+  status: MyText
+
+two:
+  id: 1
+  terminal_id: 1
+  transaction_id: 1
+  origin_invoice_id: 1
+  site_code: MyText
+  transaction_code: MyText
+  type_code: MyText
+  document_no: MyText
+  status: MyText
