@@ -1,54 +1,42 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Customer -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Customer %></h1>
+</div>
 
-<p>
-  <strong>Id:</strong>
-  <%= @customer.id %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:id) %></dt>
+      <dd><pre class="prettyprint"><%= @customer.id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:customer_code) %></dt>
+      <dd><pre class="prettyprint"><%= @customer.customer_code %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @customer.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:status) %></dt>
+      <dd><pre class="prettyprint"><%= @customer.status %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:discount) %></dt>
+      <dd><pre class="prettyprint"><%= @customer.discount %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:address) %></dt>
+      <dd><pre class="prettyprint"><%= @customer.address %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:e_mail) %></dt>
+      <dd><pre class="prettyprint"><%= @customer.e_mail %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:telephone) %></dt>
+      <dd><pre class="prettyprint"><%= @customer.telephone %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:birth_day) %></dt>
+      <dd><pre class="prettyprint"><%= @customer.birth_day %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:expiry_date) %></dt>
+      <dd><pre class="prettyprint"><%= @customer.expiry_date %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Customer code:</strong>
-  <%= @customer.customer_code %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              customers_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_customer_path(@customer), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              customer_path(@customer),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @customer.name %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @customer.status %>
-</p>
-
-<p>
-  <strong>Discount:</strong>
-  <%= @customer.discount %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @customer.address %>
-</p>
-
-<p>
-  <strong>E mail:</strong>
-  <%= @customer.e_mail %>
-</p>
-
-<p>
-  <strong>Telephone:</strong>
-  <%= @customer.telephone %>
-</p>
-
-<p>
-  <strong>Birth day:</strong>
-  <%= @customer.birth_day %>
-</p>
-
-<p>
-  <strong>Expiry date:</strong>
-  <%= @customer.expiry_date %>
-</p>
-
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
