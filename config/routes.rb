@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dashboards/index'
+
   resources :customers
 
   resources :invoices
