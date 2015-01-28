@@ -1,6 +1,5 @@
-<h1>Editing invoice_line</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @invoice_line %> |
-<%= link_to 'Back', invoice_lines_path %>
+<%- model_class = InvoiceLine -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => InvoiceLine %></h1>
+</div>
+<%= render :partial => 'form' %>

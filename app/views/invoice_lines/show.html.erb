@@ -1,39 +1,34 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = InvoiceLine -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => InvoiceLine %></h1>
+</div>
 
-<p>
-  <strong>Invoice:</strong>
-  <%= @invoice_line.invoice_id %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:invoice_id) %></dt>
+      <dd><pre class="prettyprint"><%= @invoice_line.invoice_id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:line_no) %></dt>
+      <dd><pre class="prettyprint"><%= @invoice_line.line_no %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:product_code) %></dt>
+      <dd><pre class="prettyprint"><%= @invoice_line.product_code %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:quantity) %></dt>
+      <dd><pre class="prettyprint"><%= @invoice_line.quantity %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:retail_price) %></dt>
+      <dd><pre class="prettyprint"><%= @invoice_line.retail_price %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:subtotal) %></dt>
+      <dd><pre class="prettyprint"><%= @invoice_line.subtotal %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Line no:</strong>
-  <%= @invoice_line.line_no %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              invoice_lines_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_invoice_line_path(@invoice_line), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              invoice_line_path(@invoice_line),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Product code:</strong>
-  <%= @invoice_line.product_code %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
-  <%= @invoice_line.quantity %>
-</p>
-
-<p>
-  <strong>Retail price:</strong>
-  <%= @invoice_line.retail_price %>
-</p>
-
-<p>
-  <strong>Subtotal:</strong>
-  <%= @invoice_line.subtotal %>
-</p>
-
-<p>
-  <strong>Invoice:</strong>
-  <%= @invoice_line.invoice %>
-</p>
-
-<%= link_to 'Edit', edit_invoice_line_path(@invoice_line) %> |
-<%= link_to 'Back', invoice_lines_path %>

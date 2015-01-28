@@ -1,17 +1,46 @@
-<%= simple_form_for(@invoice_line) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :invoice_id %>
-    <%= f.input :line_no %>
-    <%= f.input :product_code %>
-    <%= f.input :quantity %>
-    <%= f.input :retail_price %>
-    <%= f.input :subtotal %>
-    <%= f.association :invoice %>
+<%= form_for @invoice_line, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :invoice_id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :invoice_id, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :line_no, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :line_no, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :product_code, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :product_code, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :quantity, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :quantity, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :retail_price, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :retail_price, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :subtotal, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :subtotal, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  invoice_lines_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
