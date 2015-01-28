@@ -1,0 +1,20 @@
+<%= simple_form_for(@customer) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :id %>
+    <%= f.input :customer_code %>
+    <%= f.input :name %>
+    <%= f.input :status %>
+    <%= f.input :discount %>
+    <%= f.input :address %>
+    <%= f.input :e_mail %>
+    <%= f.input :telephone %>
+    <%= f.input :birth_day %>
+    <%= f.input :expiry_date %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
